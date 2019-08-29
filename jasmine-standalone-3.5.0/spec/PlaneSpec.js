@@ -2,12 +2,14 @@
 
 describe('Plane', function(){
   var plane;
+  var airport;
 
   beforeEach(function(){
-    plane = new Plane;
+    plane = new Plane();
+    airport = jasmine.createSypObj('airport', ['clearForLanding']);
   });
 
   it('can land at an airport', function(){
-    expect(plane.land).not.toBeUndefined()
+    expect(airport.clearForLanding).toHaveBeenCalledWith(plane);
   });
 });
