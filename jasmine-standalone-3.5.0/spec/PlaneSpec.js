@@ -8,7 +8,7 @@ describe('Plane',function(){
   beforeEach(function(){
 
     plane = new Plane();
-    airport = jasmine.createSpyObj('airport',['clearForLanding'],['clearForTakeOff']);
+    airport = jasmine.createSpyObj('airport',['clearForLanding', 'clearForTakeOff']);
   });
 
   it('can land at an airport', function(){
@@ -17,7 +17,7 @@ describe('Plane',function(){
   });
 
   it('can instruct planes to take off', function(){
-    plane.land();
+    plane.land(airport);
     plane.takeoff();
     expect(airport.clearForTakeOff).toHaveBeenCalled();
   });
