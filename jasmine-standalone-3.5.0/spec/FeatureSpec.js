@@ -24,15 +24,26 @@ describe('under normal conditions', function(){
     plane.takeoff();
     expect(airport.planes()).not.toContain(plane);
   });
-  
+
+});
+
+describe('in stormy conditions', function(){
+  it('blocks take off when the weather is stormy', function(){
+    spyOn(Math, 'random').and.returnValue(0);
+    plane.land(airport);
+    spyOn(airport._weather,'isStormy').and.returnValue(true);
+    expect(function(){ plane.takeoff(); }).toThrowError('cant take off during storm');
+    expect(airport.planes()).toContain(plane);
+  });
+
+  it('blocks landing when weather is stormy', function(){
+    spyOn(Math, 'random').and.returnValue(1);
+    expect(function() { airport.land(airport); }).toThrowError('cant land during storm')
+    expect(airport.planes()).toEqual([]);
+  });
+
 });
 
 
 
-  it('blocks take off when the weather is stormy', function(){
-    plane.land(airport);
-    spyOn(airport,'isStormy').and.returnValue(true);
-    expect(function(){ plane.takeoff(); }).toThrowError('cant take off during storm');
-    expect(airport.planes()).toContain(plane);
-  });
 });
