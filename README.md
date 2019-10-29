@@ -2,7 +2,11 @@
 <h3 align="center">A basic airport application built using TDD</h3>
 <p align="center">Language: Javascript </br> Testing: Jasmine </p>
 
+<h3 align="center">Getting Started</h3>
 
+Clone this repo
+Navigate to the repo
+Open SpecRunner.html to view all current tests undertaken
 
 <h3 align="center">Specification</h3>
 
