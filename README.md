@@ -1,6 +1,6 @@
 <h1 align="center">Airport Javascript</h1>
 <h3 align="center">A basic airport application built using TDD</h3>
-<h3 align="center">Language: Javascript Testing: Jasmine</h3>
+<p align="center">Language: Javascript </br> Testing: Jasmine </p>
 
 
 
