@@ -41,9 +41,5 @@ describe('in stormy conditions', function(){
     expect(function() { airport.land(airport); }).toThrowError('cant land during storm')
     expect(airport.planes()).toEqual([]);
   });
-
 });
-
-
-
 });
